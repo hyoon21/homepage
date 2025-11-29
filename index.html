@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>고형윤 · 개인 홈페이지</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Paper texture background -->
+    <style>
+      body {
+        background: #fff9c4; /* 연한 노란색 */
+      }
+      .paper {
+        background: #ffffffcc;
+        backdrop-filter: blur(0.5px);
+        border: 1px solid #e0e0b0;
+        box-shadow: 2px 2px 0px #d8d89c;
+        background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+      }
+      .crayon {
+        font-family: "Comic Sans MS", "KG Happy", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const Hero = () => (
+        <section className="w-full py-20 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between">
+          <div>
+            <h1 className="text-5xl md:text-6xl font-bold text-green-700 crayon">
+              고형윤
+            </h1>
+            <p className="text-2xl mt-2 text-green-900 crayon">여천중학교 교사</p>
+            <p className="text-xl mt-2 text-green-900 crayon">정보 교사</p>
+          </div>
+
+          <img
+            src="./박보검.png"
+            alt="profile"
+            className="w-60 h-60 object-cover rounded-full shadow-xl border-4 border-green-500 mt-8 md:mt-0"
+          />
+        </section>
+      );
+
+      const About = () => (
+        <section className="px-6 md:px-16 py-14">
+          <h2 className="text-3xl font-bold text-green-700 mb-6 crayon">
+            나는 어떤 선생님인가요?
+          </h2>
+
+          <div className="paper p-6 rounded-xl leading-relaxed text-lg text-green-900">
+            <p className="mb-4">
+              저는 학생들이 스스로 탐색하고 부딪혀 보며 배우는 과정을 무엇보다 중요하게
+              생각합니다. 경험을 통해 스스로 깨우친 지식은 오래 남고, 배움에 대한 자신감을
+              만들어 줍니다.
+            </p>
+            <p className="mb-4">
+              또한 협력은 학습의 가장 강력한 힘이라고 믿습니다. 혼자보다 함께할 때 생각은
+              확장되고, 문제를 바라보는 시야도 넓어집니다. 저는 수업 속에서 학생들이 자연스럽게
+              서로 돕고 배우는 구조를 만들기 위해 늘 고민합니다.
+            </p>
+            <p>
+              교실은 작은 실험실이며, 학생들은 끊임없이 탐구하는 연구자입니다. 저는 이들이 편안하게
+              도전할 수 있는 환경을 만드는 안내자의 역할을 하고자 합니다.
+            </p>
+          </div>
+        </section>
+      );
+
+      const Experience = () => (
+        <section className="px-6 md:px-16 py-14">
+          <h2 className="text-3xl font-bold text-green-700 mb-6 crayon">Experience</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              "여천중학교 정보 교사",
+              "코딩 방과후 프로그램 운영",
+              "교실혁명 선도교사"
+            ].map((item) => (
+              <div
+                key={item}
+                className="paper p-5 rounded-xl text-green-900 font-semibold text-lg crayon"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+
+      const Lectures = () => (
+        <section className="px-6 md:px-16 py-14">
+          <h2 className="text-3xl font-bold text-green-700 mb-6 crayon">Lectures</h2>
+
+          <div className="paper p-6 rounded-xl text-green-900 leading-relaxed">
+            <p>
+              강의 및 연수는 교육 기술, 프로젝트 기반 학습(PBL), 디지털 도구 활용 수업,
+              협동 활동 중심 수업 설계 등을 주제로 진행합니다. 미래 교육 환경에 맞춘 실천적
+              사례를 중심으로, 현장에서 바로 활용 가능한 내용을 전달합니다.
+            </p>
+          </div>
+        </section>
+      );
+
+      const Links = () => (
+        <section className="px-6 md:px-16 py-14">
+          <h2 className="text-3xl font-bold text-green-700 mb-6 crayon">Links</h2>
+
+          <div className="paper p-6 rounded-xl text-green-900">
+            <p>필요한 외부 링크나 자료 공유 링크가 있다면 여기에 추가할 수 있습니다.</p>
+          </div>
+        </section>
+      );
+
+      const Contact = () => (
+        <section className="px-6 md:px-16 py-14">
+          <h2 className="text-3xl font-bold text-green-700 mb-4 crayon">Contact</h2>
+
+          <p className="text-green-900 mb-4">
+            강의·연수·컨설팅 문의는 이메일로 연락 주세요.
+          </p>
+
+          <a
+            href="mailto:hyoon21@t.jne.go.kr"
+            className="paper px-6 py-3 inline-block rounded-xl text-lg font-bold text-green-800 hover:bg-green-100 transition crayon"
+          >
+            hyoon21@t.jne.go.kr
+          </a>
+        </section>
+      );
+
+      const Footer = () => (
+        <footer className="text-center text-green-900 py-10 mt-10">
+          <p className="crayon">Designed for Future Education</p>
+          <p className="crayon">© 2025 HyeongYoon. All Rights Reserved.</p>
+        </footer>
+      );
+
+      const App = () => (
+        <>
+          <Hero />
+          <About />
+          <Experience />
+          <Lectures />
+          <Links />
+          <Contact />
+          <Footer />
+        </>
+      );
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>
